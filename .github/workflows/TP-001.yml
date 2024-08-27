@@ -1,0 +1,19 @@
+name: TP-001.yml
+on:
+  pull_request_target:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - id: 0
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - id: 1
+        run: |
+          ${{ github.head_ref }}
+
+      - id: 3
+        run: |
+          npm install
